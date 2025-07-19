@@ -1,6 +1,5 @@
-# .NET 9 SDK kullanarak build aşaması
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
+WORKDIR /app
 
 # Projeyi kopyala
 COPY . .
@@ -19,5 +18,5 @@ COPY --from=build /app/publish .
 
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "backend.dll"]  # DLL ismini backend projenin derlenen adıyla değiştir
+ENTRYPOINT ["dotnet", "backend.dll"]
 
