@@ -1,0 +1,410 @@
+/* === Genel Stil Ayarları === */
+.admin-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body, html için olan stil kaldırıldı, çünkü .admin-container içinde body/html olamaz */
+
+/* === Admin Panel Genel Yapısı === */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+/* === İçerik Alanı === */
+.admin-container .admin-content {
+  flex: 1;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+/* === Başlıklar === */
+.admin-container h1, 
+.admin-container h2, 
+.admin-container h3, 
+.admin-container h4 {
+  color: #3c3c3c;
+  margin-bottom: 12px;
+}
+
+/* === Tablo Stili === */
+.admin-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.admin-container th, .admin-container td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.admin-container th {
+  background-color: #fffaf0;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #f0cbd5;
+}
+
+.admin-container td {
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* === Butonlar === */
+.admin-container button {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d72660;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.admin-container button:hover {
+  background-color: #c21850;
+}
+
+/* === Form Girdileri === */
+.admin-container input, 
+.admin-container select, 
+.admin-container textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.admin-container input:focus, 
+.admin-container select:focus, 
+.admin-container textarea:focus {
+  outline: none;
+  border-color: #d72660;
+  box-shadow: 0 0 0 2px rgba(215, 38, 96, 0.2);
+}
+
+/* === Sidebar === */
+.admin-container .custom-sidebar {
+  width: 190px;
+  min-height: 100vh;
+  background-color: #fffaf0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px 0 0 18px;
+  transition: all 0.3s ease;
+}
+
+.admin-container .sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.admin-container .sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.admin-container .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px 10px 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  justify-content: flex-start;
+}
+
+.admin-container .sidebar-link:hover,
+.admin-container .sidebar-link.active {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.admin-container .sidebar-link .icon {
+  font-size: 1rem;
+}
+
+.admin-container .logout-btn {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: #444;
+  margin-top: auto;
+}
+
+/* Modern admin form tasarımı - header uyumlu renkler */
+.admin-container .admin-form {
+  max-width: 900px;
+  margin: 60px auto 0 auto;
+  background: #fffaf0;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 1.5px 8px rgba(0,0,0,0.04);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: stretch;
+  animation: pop-in 0.7s cubic-bezier(.4,2,.6,1);
+}
+
+.admin-container .admin-form-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.admin-container .admin-input {
+  padding: 16px 30px;
+  border-radius: 10px;
+  border: 1.5px solid #eee;
+  background: #fff;
+  font-size: 1.08rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1.5px 8px rgba(215,38,96,0.04);
+  color: #222;
+}
+
+.admin-container .admin-input:focus {
+  border: 1.5px solid #333;
+  outline: none;
+  background: #fffaf0;
+  box-shadow: 0 0 0 2px #eee;
+}
+
+.admin-container .admin-input::placeholder {
+  color: #bfa6b8;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+.admin-container .admin-btn-submit {
+  margin-top: 0.5rem;
+  padding: 13px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background: #710415;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border: none;
+  color: #fff;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.admin-container .admin-btn-submit:hover {
+  background: #710415;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+.admin-btn, .admin-btn-submit {
+  background: #710415 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.admin-btn:hover {
+  background: #710415 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 600px) {
+  .admin-container .admin-form {
+    padding: 1.2rem 0.7rem 1.5rem 0.7rem;
+    max-width: 98vw;
+  }
+  .admin-container .admin-form-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* === Responsive Ayarlar === */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .admin-container .custom-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    min-height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    background: #fff;
+  }
+  .admin-container .sidebar-logo {
+    display: none;
+  }
+  .admin-container .sidebar-links {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  }
+  .admin-container .sidebar-link {
+    flex-direction: column;
+    font-size: 0.85rem;
+    padding: 4px 6px;
+    border-radius: 8px;
+    min-width: 60px;
+    min-height: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .admin-container .sidebar-link .icon {
+    font-size: 1.3rem;
+  }
+  .admin-container .admin-content {
+    padding: 16px 8px 80px 8px;
+    margin-bottom: 60px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+.admin-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 32px auto 0 auto;
+  max-width: 700px;
+}
+.admin-product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffaf0;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 22px 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #eee;
+  gap: 18px;
+}
+.admin-product-card:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+.admin-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.admin-product-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.08rem;
+  color: #333;
+}
+.admin-product-name {
+  font-weight: 600;
+  font-size: 1.13rem;
+}
+.admin-product-icon {
+  color: #444;
+  font-size: 1.1em;
+  opacity: 0.7;
+}
+.admin-product-actions {
+  display: flex;
+  gap: 10px;
+}
+.admin-product-btn {
+  background: #710415;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, border 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.admin-product-btn-edit {
+  color: #fff;
+}
+.admin-product-btn-edit:hover {
+  background: #710415;
+  color: #fff;
+}
+.admin-product-btn-delete {
+  color: #fff;
+}
+.admin-product-btn-delete:hover {
+  background: #710415;
+  color: #fff;
+}
+.admin-product-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin: 40px 0;
+}
+@media (max-width: 700px) {
+  .admin-product-list {
+    max-width: 98vw;
+    gap: 14px;
+  }
+  .admin-product-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 8px;
+    gap: 10px;
+  }
+  .admin-product-actions {
+    justify-content: flex-end;
+  }
+}

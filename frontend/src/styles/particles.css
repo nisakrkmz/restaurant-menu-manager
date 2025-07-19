@@ -1,0 +1,29 @@
+body {
+  background: #f6c6c6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle-dot {
+  width: 10px;
+  height: 10px;
+  background: #a83232; 
+  border-radius: 50%;
+  opacity: 0.5;
+  position: absolute;
+  animation: particle-move 8s linear infinite;
+}
+
+@keyframes particle-move {
+  0% { transform: translateY(0); opacity: 0.5; }
+  100% { transform: translateY(60px); opacity: 0.2; }
+} 
