@@ -1,23 +1,26 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
+# Build aşaması
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /app
 
-# Backend klasöründeki tüm dosyaları /src altına kopyala
+# Proje dosyalarını kopyala
 COPY . .
 
-# Çalışma dizinini backend olarak ayarla
-WORKDIR /src
-
-# Restore işlemini backend.sln dosyasına göre yap
+# Restore işlemi
 RUN dotnet restore backend.sln
 
-# Publish işlemi backend.sln dosyasına göre yap
+# Yayınlama işlemi
 RUN dotnet publish backend.sln -c Release -o /app/publish
 
 # Runtime aşaması
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
+
+# Yayınlanmış dosyaları kopyala
 COPY --from=build /app/publish .
 
+# API'nin dinleyeceği port
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "backend.dll"]  # backend.dll dosyanın gerçek ismine göre değiştir
+# Uygulamayı başlat (DLL adını senin çıkan dosyana göre güncelle!)
+ENTRYPOINT ["dotnet", "backend.dll"]
+
