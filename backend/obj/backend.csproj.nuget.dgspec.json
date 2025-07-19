@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Huawei\\Desktop\\menu_\\backend\\backend.csproj": {}
+    "C:\\Users\\Huawei\\Desktop\\restaurant-menu-manager\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Huawei\\Desktop\\menu_\\backend\\backend.csproj": {
+    "C:\\Users\\Huawei\\Desktop\\restaurant-menu-manager\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Huawei\\Desktop\\menu_\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\Huawei\\Desktop\\restaurant-menu-manager\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Huawei\\Desktop\\menu_\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\Huawei\\Desktop\\restaurant-menu-manager\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\Huawei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Huawei\\Desktop\\menu_\\backend\\obj\\",
+        "outputPath": "C:\\Users\\Huawei\\Desktop\\restaurant-menu-manager\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
