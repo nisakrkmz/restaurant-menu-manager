@@ -1,17 +1,23 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-COPY *.sln .
-COPY *.csproj ./
-RUN dotnet restore
-
+# Backend klasöründeki tüm dosyaları /src altına kopyala
 COPY . .
-RUN dotnet publish -c Release -o /app/publish
 
+# Çalışma dizinini backend olarak ayarla
+WORKDIR /src
+
+# Restore işlemini backend.sln dosyasına göre yap
+RUN dotnet restore backend.sln
+
+# Publish işlemi backend.sln dosyasına göre yap
+RUN dotnet publish backend.sln -c Release -o /app/publish
+
+# Runtime aşaması
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "restaurant-menu-manager.dll"]
+ENTRYPOINT ["dotnet", "backend.dll"]  # backend.dll dosyanın gerçek ismine göre değiştir
