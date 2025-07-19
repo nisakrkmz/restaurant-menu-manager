@@ -59,14 +59,14 @@ export default function ProductForm({ product, onSuccess, categories, onCancel }
       id: product?.id,
     };
     // Kategori adını bul
-    const selectedCategory = categories.find(cat => cat.categoryId === Number(data.categoryId));
+    // const selectedCategory = categories.find(cat => cat.categoryId === Number(data.categoryId));
     // Route için uygun hale getir
-    let route = "/";
-    if (selectedCategory) {
-      let name = selectedCategory.categoryName.toLowerCase();
-      name = name.replace(/ç/g, "c").replace(/ş/g, "s").replace(/ı/g, "i").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ /g, "");
-      route = `/${name}`;
-    }
+    // let route = "/";
+    // if (selectedCategory) {
+    //   let name = selectedCategory.categoryName.toLowerCase();
+    //   name = name.replace(/ç/g, "c").replace(/ş/g, "s").replace(/ı/g, "i").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ /g, "");
+    //   route = `/${name}`;
+    // }
     if (product) {
       api.put(`/foodproducts/${product.id}`, data)
         .then(() => {

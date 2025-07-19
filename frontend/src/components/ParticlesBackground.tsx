@@ -1,5 +1,3 @@
-import React from "react";
-
 const PARTICLE_COUNT = 40;
 
 function randomBetween(min: number, max: number) {

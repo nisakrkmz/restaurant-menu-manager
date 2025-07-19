@@ -7,13 +7,8 @@ import { Button } from "../components/ui/button";
 
 export default function AraSicak() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<{categoryId: number, categoryName: string}[]>([]);
   const [selected, setSelected] = useState<Product | null>(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    api.get("/category").then(res => setCategories(res.data));
-  }, []);
 
   useEffect(() => {
     api.get("/category").then(res => {

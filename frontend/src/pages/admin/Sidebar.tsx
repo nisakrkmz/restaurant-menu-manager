@@ -1,4 +1,4 @@
-import { FaPlus, FaList, FaSignOutAlt, FaLayerGroup } from "react-icons/fa";
+import { FaPlus, FaList, FaSignOutAlt } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
@@ -7,7 +7,6 @@ export default function Sidebar() {
 
   const isProducts = location.pathname === "/admin";
   const isAdd = location.pathname === "/admin/add";
-  const isCategory = location.pathname === "/admin/category";
 
   const handleLogout = () => {
     navigate("/");
