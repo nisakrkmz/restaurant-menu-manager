@@ -1,22 +1,17 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Projeyi kopyala
-COPY . .
+COPY *.sln ./
+COPY *.csproj ./
+RUN dotnet restore
 
-# Restore işlemi
-RUN dotnet restore backend.sln
+COPY . ./
+RUN dotnet publish -c Release -o /app/publish
 
-# Publish işlemi
-RUN dotnet publish backend.sln -c Release -o /app/publish
-
-# Runtime aşaması
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
+COPY --from=build /app/publish ./
 
-COPY --from=build /app/publish .
-
-EXPOSE 80
+ENV ASPNETCORE_URLS=http://+:80
 
 ENTRYPOINT ["dotnet", "backend.dll"]
-

@@ -179,3 +179,15 @@ C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publi
 C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\backend.deps.json
 C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\backend.runtimeconfig.json
 C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\backend.staticwebassets.endpoints.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\web.config
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\appsettings.Development.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\appsettings.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\backend.deps.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\backend.runtimeconfig.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\backend.staticwebassets.endpoints.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\web.config
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\appsettings.Development.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\appsettings.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\backend.deps.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\backend.runtimeconfig.json
+C:\Users\Huawei\Desktop\restaurant-menu-manager\backend\bin\Release\net9.0\publish\publish\publish\backend.staticwebassets.endpoints.json
