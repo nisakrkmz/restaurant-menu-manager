@@ -60,6 +60,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(); 
 }
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Clear();
+app.Urls.Add($"http://*:{port}");
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
