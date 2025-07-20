@@ -45,7 +45,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") // React app'in adresi
+            policy.WithOrigins("https://restaurant-menu-manager-jl73.vercel.app")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
