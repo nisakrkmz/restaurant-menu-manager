@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "./services/api";
+// import { api } from "./services/api"; // Kaldırıldı
 import type { Product } from "../types";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -11,12 +11,22 @@ export default function Salata() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get("/category").then(res => {
-      const salata = res.data.find((c: any) => c.categoryName.toLowerCase() === "salata");
-      if (salata) {
-        setProducts(salata.foodProducts || []);
-      }
-    });
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/categories`)
+      .then(res => {
+        if (!res.ok) throw new Error("API error: " + res.status);
+        return res.json();
+      })
+      .then(data => {
+        const salata = data.find((c: any) => c.categoryName.toLowerCase() === "salata");
+        if (salata) {
+          setProducts(salata.foodProducts || []);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        setProducts([]);
+      });
   }, []);
 
   return (
